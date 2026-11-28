@@ -1,10 +1,12 @@
-cask "scribe" do
-  version "1.0.0-beta.4"
-  sha256 "d24a02f4ddf26baf2ff6b5c36bdfc5f1670a0b5079047f52596445a58c1dac1e"
+# frozen_string_literal: true
 
-  url "https://github.com/AgentC-Consulting/scribe-app/releases/download/v#{version}/Scribe-Installer.dmg"
+cask "scribe" do
+  version "1.0.1"
+  sha256 "48799485d5d51b550d728e118c488f3b43cb726a5873bf5f95b2446fbdfbc374"
+
+  url "https://github.com/AgentC-Consulting/scribe-app/releases/download/v#{version}/Scribe-Free-#{version}.dmg"
   name "Scribe"
-  desc "Free, on-device dictation app for macOS"
+  desc "Free, on-device dictation app"
   homepage "https://github.com/AgentC-Consulting/scribe-app"
 
   livecheck do
@@ -13,8 +15,8 @@ cask "scribe" do
     regex(/^v?(\d+\.\d+\.\d+(?:-beta\.\d+)?)$/i)
   end
 
-  depends_on macos: :ventura
   depends_on arch:  :arm64
+  depends_on macos: :tahoe
 
   app "Scribe.app"
 
